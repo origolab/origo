@@ -21,7 +21,7 @@ There are a few basic ground-rules for contributors of the project:
 
 1. Create a local copy of the entire project.
 
-    _git clone --recurse-submodules git@github.com:origolab/medietas.git_
+    _git clone --recurse-submodules git@github.com:origolab/origo.git_
 
 
 
