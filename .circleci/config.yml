@@ -1,0 +1,86 @@
+version: 2
+
+defaults:
+  submodule: &submodule
+    run:
+      name: "Checkout Submodule"
+      working_directory: ~/project
+      command: git submodule update --init --recursive --progress
+
+  check1: &check1
+    run:
+      name: "Cargo Check Step 1"
+      working_directory: ~/project
+      command: cargo check --target $CARGO_TARGET --locked --no-default-features
+
+  check2: &check2
+    run:
+      name: "Cargo Check Step 2"
+      working_directory: ~/project
+      command: cargo check --target $CARGO_TARGET --locked --manifest-path util/io/Cargo.toml --no-default-features
+
+  check3: &check3
+    run:
+      name: "Cargo Check Step 3"
+      working_directory: ~/project
+      command: cargo check --target $CARGO_TARGET --locked --manifest-path util/io/Cargo.toml --features "mio"
+
+  build-linux: &build-linux
+    run:
+      name: "Build On Linux"
+      working_directory: ~/project
+      command: ./scripts/gitlab/build-linux.sh
+
+  test-linux: &test-linux
+    run:
+      name: "Test On Linux"
+      working_directory: ~/project
+      command: ./scripts/gitlab/test-linux.sh
+
+  test-cpp: &test-cpp
+    run:
+      name: "Test CPP Library"
+      working_directory: ~/project
+      command: ./scripts/gitlab/test-cpp.sh
+
+  validate-chainspec: &validate-chainspec
+    run:
+      name: "Validate Chain Specification"
+      working_directory: ~/project
+      command: ./scripts/gitlab/validate-chainspecs.sh
+
+  save-cache: &save-cache
+    cache-save:
+      name: "Save Cargo Cache"
+      paths:
+        - /usr/local/cargo/registry
+        - target
+      key: cargo-cache-{{ arch }}-{{ checksum "Cargo.lock" }}
+
+  restore-cache: &restore-cache
+    cache-restore:
+      name: "Restore Cargo Cache"
+      key: cargo-cache-{{ arch }}-{{ checksum "Cargo.lock" }}
+
+jobs:
+  build:
+    environment:
+      - CI_SERVER_NAME: "Circle CI"
+      - CARGO_TARGET: x86_64-unknown-linux-gnu
+      - CC: /usr/bin/gcc
+      - CXX: /usr/bin/g++
+    docker:
+      - image: origolab/medietas-circleci:latest
+    resource_class: xlarge
+    steps:
+      - checkout
+      - *submodule
+      - *restore-cache
+      - *check1
+      - *check2
+      - *check3
+      - *build-linux
+      - *test-linux
+      - *validate-chainspec
+      - *test-cpp
+      - *save-cache

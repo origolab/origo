@@ -52,8 +52,8 @@ Make sure that these binaries are in your `PATH`. After that, you should be able
 
 ```bash
 # download Origo network code
-$ git clone https://github.com/origolab/medietas.git
-$ cd medietas
+$ git clone https://github.com/origolab/origo.git
+$ cd origo
 
 # build in release mode
 $ cargo build --release --features final
@@ -102,8 +102,8 @@ These tutorials walk the users to understand basic usages and features of Origo 
 
 ## Contribution
 If you'd like to contribute to origo network, please follow below.
-<p><strong><a href="https://github.com/origolab/medietas/blob/develop/.github/CONTRIBUTING.md">Contributing Guidelines for Origo Network.</a></strong></p>
-<p><strong><a href="https://github.com/origolab/medietas/blob/develop/.github/STYLE_GUIDE.md">Code Style Guide for Origo Network.</a></strong></p>
+<p><strong><a href="https://github.com/origolab/origo/blob/master/.github/CONTRIBUTING.md">Contributing Guidelines for Origo Network.</a></strong></p>
+<p><strong><a href="https://github.com/origolab/origo/blob/master/.github/STYLE_GUIDE.md">Code Style Guide for Origo Network.</a></strong></p>
 
 ## Documentation
 
@@ -112,4 +112,4 @@ Official website: https://origo.network/
 Be sure to [check out our medium](https://medium.com/@origonetwork) for more information.
 
 ## License
-<p><strong><a href="https://github.com/origolab/medietas/blob/develop/LICENSE">GNU GENERAL PUBLIC LICENSE</a></strong></p>
+<p><strong><a href="https://github.com/origolab/origo/blob/master/LICENSE">GNU GENERAL PUBLIC LICENSE</a></strong></p>
