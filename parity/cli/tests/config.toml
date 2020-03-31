@@ -1,0 +1,75 @@
+# This config should be placed in following path:
+
+[parity]
+# Chain
+chain = "medietas"
+# Blockchain and settings
+base_path = "$HOME/.origo"
+# Databases path
+db_path = "$HOME/.origo/chains"
+
+[ui]
+disable = true
+
+[network]
+warp = false
+nat = "any"
+min_peers = 10
+max_peers = 20
+max_pending_peers = 30
+snapshot_peers = 40
+
+# P2P port.
+port = 26622
+# Network ID
+id = 27
+# Enable or disable new peers discovery.
+discovery = true
+# Specify a path to a file with peers' enodes to be always connected to.
+reserved_peers = "/etc/origo/reserved_peers"
+
+[websockets]
+# UI won't work and WebSockets server will be not available.
+disable = true
+
+[rpc]
+# JSON-RPC over HTTP will be accessible on port 9023.
+port = 6622
+#  JSON-RPC will be listening for connections on IP 0.0.0.0.
+interface = "0.0.0.0"
+# Allows Cross-Origin Requests from domain 'all'.
+cors = ["all"]
+# Only selected APIs will be exposed over this interface.
+apis = ["origo", "web3", "eth", "pubsub", "net", "parity", "parity_pubsub", "traces", "rpc", "shh", "shh_pubsub", "personal", "parity_accounts"]
+
+[ipfs]
+enable = false
+port = 5001
+
+[mining]
+# Account address to receive reward when block is mined.
+author = "0x7a93b005d71d402ff5b88f812e0e04db7e2fb2f4"
+# Prepare a block to seal even when there are no miners connected.
+force_sealing = true
+# New pending block will be created for all transactions (both local and external).
+reseal_on_txs = "all"
+# New pending block will be created only once per 4000 milliseconds.
+reseal_min_period = 4000
+reseal_max_period = 60000
+# Most transactions in queue.
+tx_queue_size = 8192
+
+[footprint]
+cache_size = 256
+
+[stratum]
+# Enable stratum
+port = 6002
+disable = false
+
+[misc]
+# Logging pattern (`<module>=<level>`, e.g. `own_tx=trace`).
+logging = "miner=trace,own_tx=trace,rpc=trace,ethcore=trace,equihash=trace,ethcore-miner=trace,sync=trace"
+log_file = "/var/log/origo.log"
+color = true
+

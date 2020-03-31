@@ -1,0 +1,30 @@
+[package]
+name = "common-types"
+description = "Common types used throughout the codebase"
+version = "0.1.0"
+authors = ["Parity Technologies <admin@parity.io>"]
+
+[dependencies]
+ethereum-types = "0.4"
+ethjson = { path = "../../json" }
+ethkey = { path = "../../accounts/ethkey" }
+heapsize = "0.4"
+keccak-hash = "0.1"
+parity-bytes = "0.1"
+rlp = { version = "0.3.0", features = ["ethereum"] }
+rlp_derive = { path = "../../util/rlp-derive" }
+unexpected = { path = "../../util/unexpected" }
+bellman = { path = "../../ct-lib/bellman" }
+zip32 = { path = "../../ct-lib/zip32" }
+pairing = { path = "../../ct-lib/pairing" }
+group = { path = "../../ct-lib/group" }
+ff = { path = "../../ct-lib/ff" }
+librustzcash = { path = "../../ct-lib/librustzcash" }
+zcash_primitives = { path = "../../ct-lib/zcash_primitives" }
+zcash_proofs = { path = "../../ct-lib/zcash_proofs" }
+sapling-crypto = { path = "../../ct-lib/sapling-crypto" }
+lazy_static = "1.3.0"
+
+[dev-dependencies]
+rustc-hex= "1.0"
+hex = "0.3.2"

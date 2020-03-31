@@ -1,0 +1,17 @@
+[Unit]
+Description=Origo Daemon
+After=network.target
+
+[Service]
+# run as root, set base_path in config.toml
+ExecStart=/usr/bin/origo --config /etc/origo/config.toml
+Restart=on-failure
+
+# Specifies which signal to use when killing a service. Defaults to SIGTERM.
+# SIGHUP gives parity time to exit cleanly before SIGKILL (default 90s)
+KillSignal=SIGHUP
+
+[Install]
+WantedBy=default.target
+
+

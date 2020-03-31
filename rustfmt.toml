@@ -1,0 +1,9 @@
+max_width=100
+comment_width=100
+tab_spaces=4
+trailing_comma="Vertical"
+reorder_imports=true
+format_strings=false
+hard_tabs=true
+match_arm_blocks=false
+error_on_line_overflow=false

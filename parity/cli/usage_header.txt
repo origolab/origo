@@ -1,0 +1,2 @@
+Origo Client.
+	Copyright 2019-present Origo Foundation.

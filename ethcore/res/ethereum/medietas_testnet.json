@@ -1,0 +1,157 @@
+{
+  "name": "medietas",
+  "engine": {
+    "Ethash": {
+      "params": {
+        "minimumDifficulty": "0x0020",
+        "difficultyBoundDivisor": "0x0020"
+      }
+    }
+  },
+  "params": {
+    "gasLimitBoundDivisor": "0x0400",
+    "maximumExtraDataSize": "0x20",
+    "totalReward": "0xc7272221823c0be1400000",
+    "blockCountEachEra": 2000000,
+    "productionRate": 50,
+    "minGasLimit": "0x1388",
+    "networkID": "0x1b",
+    "chainID": "0x1b",
+    "eip155Transition": 0,
+    "validateChainIdTransition": 0,
+    "eip140Transition": 0,
+    "eip211Transition": 0,
+    "eip214Transition": 0,
+    "eip658Transition": 0
+  },
+  "genesis": {
+    "seal": {
+      "origo": {
+        "nonce": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "solution": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "difficulty": "0x0002",
+    "author": "0x0000000000000000000000000000000000000000",
+    "timestamp": "0x00",
+    "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "extraData": "0x",
+    "gasLimit": "0x8000000000000"
+  },
+  "nodes": [
+    "enode://cd27a05162a3838b62774d670d9d7ffaff832d35f201938743298b6d01e4174f60940629c5bd31f4cb46748cab90be0ad234fd7fc04e1337c53353605293566f@13.113.20.2:26622",
+    "enode://6f4cf164a6b3c5254058580c95c562953cebb185d605c4d45411c6ee11bae636f8be46558fe0e332022608ee9cf9b57f1c904e7d1bfec051ed54fb7cb59df8dd@3.115.143.89:26622"
+  ],
+  "accounts": {
+    "0x0000000000000000000000000000000000000001": {
+      "balance": "1",
+      "builtin": {
+        "name": "ecrecover",
+        "pricing": {
+          "linear": {
+            "base": 3000,
+            "word": 0
+          }
+        }
+      }
+    },
+    "0x0000000000000000000000000000000000000002": {
+      "balance": "1",
+      "builtin": {
+        "name": "sha256",
+        "pricing": {
+          "linear": {
+            "base": 60,
+            "word": 12
+          }
+        }
+      }
+    },
+    "0x0000000000000000000000000000000000000003": {
+      "balance": "1",
+      "builtin": {
+        "name": "ripemd160",
+        "pricing": {
+          "linear": {
+            "base": 600,
+            "word": 120
+          }
+        }
+      }
+    },
+    "0x0000000000000000000000000000000000000004": {
+      "balance": "1",
+      "builtin": {
+        "name": "identity",
+        "pricing": {
+          "linear": {
+            "base": 15,
+            "word": 3
+          }
+        }
+      }
+    },
+    "0x0000000000000000000000000000000000000005": {
+      "builtin": {
+        "name": "modexp",
+        "activate_at": "0x0",
+        "pricing": {
+          "modexp": {
+            "divisor": 20
+          }
+        }
+      }
+    },
+    "0x0000000000000000000000000000000000000006": {
+      "builtin": {
+        "name": "alt_bn128_add",
+        "activate_at": "0x0",
+        "pricing": {
+          "linear": {
+            "base": 500,
+            "word": 0
+          }
+        }
+      }
+    },
+    "0x0000000000000000000000000000000000000007": {
+      "builtin": {
+        "name": "alt_bn128_mul",
+        "activate_at": "0x0",
+        "pricing": {
+          "linear": {
+            "base": 40000,
+            "word": 0
+          }
+        }
+      }
+    },
+    "0x0000000000000000000000000000000000000008": {
+      "builtin": {
+        "name": "alt_bn128_pairing",
+        "activate_at": "0x0",
+        "pricing": {
+          "alt_bn128_pairing": {
+            "base": 100000,
+            "pair": 80000
+          }
+        }
+      }
+    },
+    "0x7f668e9AAfA536287AE69A1ebae5DdFf8e139680": {
+      "balance": "419908836500000000000000000"
+    },
+    "0xe483d4D3D4CD86E42CbAEd3D3fe09402AeeAEC6e": {
+      "balance": "83460131750000000000000000"
+    },
+    "0x337E6796855fCe218b71E54B95385489cc6cD1A1": {
+      "balance": "114203325800000000000000000"
+    },
+    "0x04632b8f8890D1438aAa1F452A929be56d5A7c5E": {
+      "balance": "125000000000000000000000000"
+    },
+    "0xAE40127cC6E94B2Bf501AE5e5E82338E6D65B989": {
+      "balance": "16666665990000000000000000"
+    }
+  }
+}
